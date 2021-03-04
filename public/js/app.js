@@ -1,3 +1,4 @@
+
 class App extends React.Component {
 
     state = {
@@ -63,6 +64,7 @@ class App extends React.Component {
     render = () => {
       return (
           <div className="main-container">
+            <button>TEst</button>
             <div>
                 <h2>Create Menu Item</h2>
                 <form onSubmit={this.handleSubmit}>
@@ -105,7 +107,12 @@ class App extends React.Component {
                 {this.state.menu.map(menuItem => {
                     return (
                         <div className="menu-item-card" key={menuItem._id}>
-                            {menuItem.name}<br/>
+                            <div className="item-image">
+                                <img className="menu-img" src={menuItem.image} alt="img"></img>
+                            </div>
+                            <div className="item-name">{menuItem.name}</div>
+                            <div className="item-description">{menuItem.description}</div>
+                            <div className="item-price">{menuItem.price}</div>
                             {menuItem.price}
                         </div>
                     )

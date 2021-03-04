@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 
 
+
 // CONFIGURATION
 const app = express()
 require('dotenv').config()
@@ -13,6 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 // MIDDLEWARE
 app.use(express.json())
 app.use(express.static('public'))
+
 
 const menuController = require('./controllers/menu_controller.js')
 app.use('/menu/', menuController)
